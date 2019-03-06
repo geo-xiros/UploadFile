@@ -5,21 +5,23 @@ $(document).ready(function () {
         e.preventDefault();
         e.stopPropagation();
     })
-    .on('dragover dragenter', function () {
+        .on('dragover dragenter', function () {
             dropArea.addClass('highlight');
         })
-    .on('dragleave dragend drop', function () {
+        .on('dragleave dragend drop', function () {
             dropArea.removeClass('highlight');
         })
-    .on('drop', function (e) {
+        .on('drop', function (e) {
 
             let files = e.originalEvent.dataTransfer.files;
 
             console.log(files.length);
 
             for (let i = 0; i < files.length; i++) {
+                // TODO
+                // Send Files using Ajax or post to server
                 console.log(files[i]);
             }
 
-    });
+        });
 });
